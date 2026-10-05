@@ -1,0 +1,217 @@
+NEHA MAQBOOL JUW32797
+SET C - DEVOPS LAB EXAM
+Seat No: 2329239
+
+
+QUESTION 1 - GIT AND GITHUB
+
+--- Create project directory ---
+
+mkdir SetC_2329239
+cd SetC_2329239
+
+
+--- Initialize Git repository ---
+
+git init
+git branch -M main
+
+
+--- Configure Git user (if required) ---
+
+git config user.name "Neha Maqbool"
+git config user.email "YOUR_EMAIL"
+
+
+--- Check Git status ---
+
+git status
+
+
+--- Add initial files ---
+
+git add site/index.html
+git add .gitignore
+
+
+--- Initial commit ---
+
+git commit -m "Initial college book catalogue"
+
+
+--- Connect GitHub repository ---
+
+git remote add origin https://github.com/4neha789/devops-c-2329239.git
+
+
+--- Push main branch ---
+
+git push -u origin main
+
+
+--- Create update-content branch ---
+
+git checkout -b update-content
+
+
+--- Add fourth book and commit ---
+
+git add site/index.html
+git commit -m "Add fourth book to catalogue"
+
+
+--- Push update-content branch ---
+
+git push -u origin update-content
+
+
+--- Merge update-content into main ---
+
+git checkout main
+git merge update-content
+
+
+--- Push updated main branch ---
+
+git push origin main
+
+
+--- Check branches ---
+
+git branch -a
+
+
+--- Check commit history ---
+
+git log --oneline --graph --all
+
+
+--- GitHub Pages ---
+GitHub Actions workflow is stored at:
+
+.github/workflows/pages.yml
+
+GitHub Pages URL:
+
+https://4neha789.github.io/devops-c-2329239/
+
+
+--- Update heading on main ---
+
+git checkout main
+
+git add site/index.html
+git commit -m "Update catalogue heading"
+
+git push origin main
+
+
+========================================
+QUESTION 2 - DOCKER
+========================================
+
+--- Build Docker image ---
+
+docker build -t devops-c-2329239:v1 .
+
+
+--- Check Docker image ---
+
+docker images
+
+
+--- Run named Docker container ---
+
+docker run -d --name devops-c-2329239 -p 8080:80 devops-c-2329239:v1
+
+
+--- Check running container ---
+
+docker ps
+
+
+--- Test Docker website ---
+
+http://127.0.0.1:8080/
+
+
+========================================
+QUESTION 2 - MINIKUBE / KUBERNETES
+========================================
+
+--- Check Minikube ---
+
+minikube status
+
+
+--- Start Minikube if required ---
+
+minikube start
+
+
+--- Load Docker image into Minikube ---
+
+minikube image load devops-c-2329239:v1
+
+
+--- Check image in Minikube ---
+
+minikube image ls
+
+
+--- Apply Deployment ---
+
+kubectl apply -f deployment.yaml
+
+
+--- Check Deployment ---
+
+kubectl get deployments
+
+
+--- Check Pods ---
+
+kubectl get pods
+
+
+--- Apply Service ---
+
+kubectl apply -f service.yaml
+
+
+--- Check Service ---
+
+kubectl get services
+
+
+--- Get all Kubernetes resources ---
+
+kubectl get all
+
+
+--- Access Kubernetes Service ---
+
+minikube service devops-c-2329239
+
+
+--- Scale Deployment from 1 to 2 replicas ---
+
+kubectl scale deployment devops-c-2329239 --replicas=2
+
+
+--- Verify two Ready Pods ---
+
+kubectl get pods
+
+
+--- Verify Deployment 2/2 ---
+
+kubectl get deployment devops-c-2329239
+
+
+--- Verify Service after scaling ---
+
+kubectl get service devops-c-2329239
+
+
+
