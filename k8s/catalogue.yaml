@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-c-2329239
+  labels:
+    app: devops-c-2329239
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-c-2329239
+  template:
+    metadata:
+      labels:
+        app: devops-c-2329239
+    spec:
+      containers:
+        - name: nginx
+          image: devops-c-2329239:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-c-2329239
+  labels:
+    app: devops-c-2329239
+spec:
+  type: NodePort
+  selector:
+    app: devops-c-2329239
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
